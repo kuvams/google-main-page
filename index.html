@@ -5,13 +5,77 @@
     <title>Google</title>
     <link href="pictures/icon.png" rel="icon">
     <link type="text/css" rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="setFocus()">
     <div class="head">
       <a class="topLnk" href="https://gmail.com">Почта</a>
       <a class="topLnk" href="https://www.google.by/imghp?hl=ru&tab=wi&ogbl">Картинки</a>
-      <a class="dotsLnk" href="https://www.google.by/intl/ru/about/products" title="Приложения Google"></a>
+      <a class="dotsLnk" onclick="showMenu()" href="#" title="Приложения Google"></a>
       <a class="enterLnk" href="https://accounts.google.com/ServiceLogin">Войти</a>
+    </div>
+    <div id="hdnMenu" class="hiddenMenu">
+      <div class="borderHdnMenu">
+        <ul class="servicesList">
+          <li class="service"><a class="tile" href="https://myaccount.google.com/?utm_source=OGB&tab=wk&utm_medium=app">
+            <span class="picTile" style="background-position: 0 -1449px;"></span>
+            <span class="textTile">Аккаунт</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://www.google.by/webhp?tab=ww">
+            <span class="picTile" style="background-position: 0 -138px;"></span>
+            <span class="textTile">Поиск</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://maps.google.by/maps?hl=ru&tab=wl">
+            <span class="picTile" style="background-position: 0 -828px;"></span>
+            <span class="textTile">Карты</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://www.youtube.com/?gl=BY&tab=w1">
+            <span class="picTile" style="background-position: 0 -1311px;"></span>
+            <span class="textTile">YouTube</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://play.google.com/?hl=ru&tab=w8">
+            <span class="picTile" style="background-position: 0 -207px;"></span>
+            <span class="textTile">Play</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://mail.google.com/mail/?tab=wm">
+            <span class="picTile" style="background-position: 0 -483px;"></span>
+            <span class="textTile">Почта</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://meet.google.com/?hs=197">
+            <span class="picTile" style="background-position: 0 -2622px;"></span>
+            <span class="textTile">Meet</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://contacts.google.com/?hl=ru&tab=wC">
+            <span class="picTile" style="background-position: 0 -1863px;"></span>
+            <span class="textTile">Контакты</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://drive.google.com/?tab=wo">
+            <span class="picTile" style="background-position: 0 -2277px;"></span>
+            <span class="textTile">Диск</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://www.google.com/calendar?tab=wc">
+            <span class="picTile" style="background-position: 0 -2553px;"></span>
+            <span class="textTile">Календарь</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://translate.google.by/?hl=ru&tab=wT">
+            <span class="picTile" style="background-position: 0 -1242px;"></span>
+            <span class="textTile">Переводчик</span>
+          </a></li>
+          <li class="service"><a class="tile" href="https://photos.google.com/?tab=wq&pageId=none">
+            <span class="picTile" style="background-position: 0 -621px;"></span>
+            <span class="textTile">Фото</span>
+          </a></li>
+          <!--
+          <li class="service"><a class="tile" href="https://duo.google.com/?usp=duo_ald">
+            <span class="picTile" style="background-position: 0 -897px;"></span>
+            <span class="textTile">Duo</span>
+          </a></li>
+          -->
+        </ul>
+        <!--
+        <span class="hdnMenuHr"></span>
+        -->
+      </div>
     </div>
     <center>
       <div class="logo">
@@ -21,22 +85,22 @@
         <div class="srchBorder">
           <div class="srchPanel">
             <div class="srchIcon">
-              <img src="pictures/srchIcon.PNG">
+              <img src="pictures/srchIcon.png">
             </div>
-            <input name="q" type="text" class="srchForm">
+            <input name="q" id="srchForm" type="text" class="srchForm" value onclick="search()">
             <div class="screenKeyboardPic">
-              <img src="pictures/screenKeyboard.PNG" alt="">
+              <img src="pictures/screenKeyboard.png" alt="">
             </div>
             <div class="micPic">
-              <img src="pictures/mic.PNG">
+              <img src="pictures/mic.png">
             </div>
           </div>
         </div>
-        <div class="underScrhPanel">
-          <input class="buttons" value="Поиск в Google" type="submit">
-          <input class="buttons" value="Мне повезет!" type="submit">
-        </div>
       </form>
+        <div class="underScrhPanel">
+          <input onclick="search()" id="searchButton" class="buttons" value="Поиск в Google" type="submit">
+          <input onclick="doodles()" class="buttons" value="Мне повезет!" type="submit">
+        </div>
     </center>
     <div class="footer">
       <span class="country">Беларусь</span>
