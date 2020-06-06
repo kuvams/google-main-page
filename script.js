@@ -14,6 +14,7 @@ function showMenu() {
 /*
 */
 function search() {
+  event.preventDefault();
   let q = document.getElementById("srchForm").value;
   if (q != 0) {
     document.location.href = (`https://www.google.com/search?q=${q}`);
